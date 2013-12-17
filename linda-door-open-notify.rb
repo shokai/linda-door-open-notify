@@ -28,7 +28,7 @@ linda.io.on :connect do  ## RocketIO's "connect" event
       tss.each do |name_, ts_|
         ts_.write ["skype", "send", msg]
         ts_.write ["twitter", "tweet", msg]
-        ts_.write ["say", msg]
+        ts_.write ["say", msg] if name_ != name
       end
     }
   end
